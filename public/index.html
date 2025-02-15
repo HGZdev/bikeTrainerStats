@@ -3,12 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BLE connection</title>
+    <title>Bike Trainer Stats</title>
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body and container */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+
+      .container {
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 300px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #4a90e2;
+      }
+
+      /* Button */
+      #connect {
+        background-color: #4a90e2;
+        color: #fff;
+        font-size: 16px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #connect:hover {
+        background-color: #357abd;
+      }
+
+      /* Status */
+      #status {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #4a90e2;
+      }
+
+      /* Stats display */
+      .stats {
+        margin-top: 20px;
+      }
+
+      .stat-item {
+        font-size: 16px;
+        margin: 5px 0;
+        color: #333;
+      }
+
+      /* Responsive design */
+      @media (max-width: 480px) {
+        .container {
+          width: 90%;
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
+
+        #connect {
+          font-size: 14px;
+        }
+
+        #status {
+          font-size: 16px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Bike trainer stats</h1>
-    <button id="connect">connect</button>
-    <p id="status">Disconnected</p>
+    <div class="container">
+      <h1>Bike Trainer Stats</h1>
+      <button id="connect">Connect</button>
+      <p id="status">Disconnected</p>
+
+      <div class="stats">
+        <p id="power" class="stat-item">Power: -- W</p>
+        <p id="cadence" class="stat-item">Cadence: -- rpm</p>
+        <p id="speed" class="stat-item">Speed: -- km/h</p>
+        <p id="distance" class="stat-item">Distance: -- m</p>
+      </div>
+    </div>
 
     <script src="app.js"></script>
   </body>
